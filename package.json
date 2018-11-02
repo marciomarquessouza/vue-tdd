@@ -10,13 +10,20 @@
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "test-unit": "vue-cli-service test:unit",
+    "test:unit:watch": "vue-cli-service test:unit --watchAll"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "flush-promises": "^1.0.0",
+    "nock": "^10.0.1",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.25",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
