@@ -1,25 +1,20 @@
-// UserView.spec.js
-
 import { shallowMount } from '@vue/test-utils';
 import UserView from '@/views/UserView';
-import VUserSearchForm from '@/components/VUserSearchForm';
+import VUserSearch from '@/components/VUserSearch';
 import VUserProfile from '@/components/VUserProfile';
 
 describe('UserView', () => {
-  it('renders the component', () => {
-    // Arrange
+  it('renders correctly', () => {
     const wrapper = shallowMount(UserView);
-    // Assert
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('renders main child components', () => {
-    // Arramge
+  it('renders main childs', () => {
     const wrapper = shallowMount(UserView);
-    const userSearchForm = wrapper.find(VUserSearchForm);
-    const userProfile = wrapper.find(VUserProfile);
-    // Assert
-    expect(userSearchForm.exists()).toBe(true);
-    expect(userProfile.exists()).toBe(true);
+    const UserSearch = wrapper.find(VUserSearch);
+    const UserProfile = wrapper.find(VUserProfile);
+    // Assets
+    expect(UserSearch.exists()).toBe(true);
+    expect(UserProfile.exists()).toBe(true);
   });
 });
