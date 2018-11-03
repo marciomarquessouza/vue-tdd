@@ -30,7 +30,7 @@ describe('UserView', () => {
     const { wrapper, userProfile } = build();
     wrapper.setData({
       user: {
-        name: 'Marcio',
+        name: '',
       },
     });
     // Assets

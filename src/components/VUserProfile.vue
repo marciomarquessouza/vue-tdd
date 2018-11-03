@@ -10,6 +10,7 @@ export default {
     user: {
       required: true,
       type: Object,
+      default: () => ({}),
     },
   },
 };
