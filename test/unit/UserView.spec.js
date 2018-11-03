@@ -3,18 +3,25 @@ import UserView from '@/views/UserView';
 import VUserSearch from '@/components/VUserSearch';
 import VUserProfile from '@/components/VUserProfile';
 
+const build = () => {
+  const wrapper = shallowMount(UserView);
+  return {
+    wrapper,
+    userSearch: () => wrapper.find(VUserSearch),
+    userProfile: () => wrapper.find(VUserProfile),
+  };
+};
+
 describe('UserView', () => {
   it('renders correctly', () => {
-    const wrapper = shallowMount(UserView);
+    const { wrapper } = build();
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   it('renders main childs', () => {
-    const wrapper = shallowMount(UserView);
-    const UserSearch = wrapper.find(VUserSearch);
-    const UserProfile = wrapper.find(VUserProfile);
+    const { userSearch, userProfile } = build();
     // Assets
-    expect(UserSearch.exists()).toBe(true);
-    expect(UserProfile.exists()).toBe(true);
+    expect(userSearch().exists()).toBe(true);
+    expect(userProfile().exists()).toBe(true);
   });
 });
