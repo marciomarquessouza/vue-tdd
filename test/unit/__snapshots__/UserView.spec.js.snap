@@ -4,6 +4,6 @@ exports[`UserView renders correctly 1`] = `
 <div>
     <h1>Hello World</h1>
     <user-search-stub></user-search-stub>
-    <user-profile-stub></user-profile-stub>
+    <user-profile-stub user="[object Object]"></user-profile-stub>
 </div>
 `;

@@ -1,10 +1,16 @@
 <template>
   <div>
-    <h1>Profile</h1>
+    <h1>{{ user.name }}</h1>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    user: {
+      required: true,
+      type: Object,
+    },
+  },
 };
 </script>
